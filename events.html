@@ -1,0 +1,231 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model</title>
+  </head>
+
+  <body>
+    <button>Click Me</button>
+   
+        
+
+
+
+        <script>
+          const button = document.querySelector('button')
+          button.addEventListener('dblclick', e => {
+            console.log('e gives the event listener object:', e)
+            console.log('e.target gives the selected element: ', e.target)
+            console.log(
+              'e.target.textContent gives content of selected element: ',
+              e.target.textContent
+            )
+          })
+        </script> -->
+    
+    <!-- <script>
+      const button = document.querySelector('button')
+      button.addEventListener('click', (e) => {
+        console.log('e gives the event listener object:', e)
+        console.log('e.target gives the selected element: ', e.target)
+        console.log(
+          'e.target.textContent gives content of selected element: ',
+          e.target.textContent
+        )
+      }) -->
+    <!-- </script>
+  </body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport Event Example</title>
+    <style>
+        .target-element {
+            margin-top: 5000px;
+            height: 200px;
+            width: 200px;
+            background-color: lightblue;
+        }
+
+
+    
+            
+        
+    </style>
+</head>
+<body>
+    <div class="target-element"></div>
+
+    <script>
+        const targetElement = document.querySelector('.target-element');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                
+let position = 0;
+
+function animate() {
+    position += 2;
+    targetElement.style.transform = `translateX(${position}px)`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+                }
+            });
+        });
+
+        observer.observe(targetElement);
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Data Binding using input or change event</h1>
+
+    <input type="text" placeholder="say something" />
+    <p></p>
+
+    <script>
+      const input = document.querySelector('input')
+      const p = document.querySelector('p')
+
+      input.addEventListener('input', e => {
+        p.textContent = e.target.value
+      })
+    </script>
+  </body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+</head>
+
+<body>
+    <h1>Giving feedback using blur event</h1>
+
+    <input type="text" id="mass" placeholder="say something" />
+    <p></p>
+
+    <script>
+        const input = document.querySelector('input')
+        const p = document.querySelector('p')
+
+        input.addEventListener('blur', (e) => {
+            input.style.border = '1px solid red'
+            p.textContent = 'Field is required'
+            p.style.color = 'red'
+
+        })
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       body,  #div{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+
+        #div {
+            flex-direction: row;
+            width: 80%;
+        }
+
+
+        input{
+            width: 90px;
+            height: 100px;
+        }
+    </style>
+  </head>
+
+  <body>
+  <input id="input" type="text">
+   <button id="button">press</button>
+  <div id="div">
+
+  </div>
+
+    <script>
+        let div = document.getElementById('div')
+        let input  = document.getElementById('input')
+        let button = document.getElementById('button')
+
+
+
+
+     
+
+     button.addEventListener('click', ()=> {
+    
+        for (let i=0; i <= input.value ; i++){
+
+let him = document.createElement('div')
+       him.style.backgroundColor ='red'
+      him.style.width = '60px'
+      him.style.height = '60px'
+   
+      him.textContent = i
+
+      if (i % 2 == 1){
+       him.style.backgroundColor = 'green'
+      }
+    
+
+div.appendChild(him)
+
+if (input.value == 0){
+    div.innerHTML = ''
+}
+
+
+
+} 
+input.addEventListener('keydown', ()=>{
+    div.innerHTML = ''
+})
+
+
+     })
+ 
+
+
+
+
+    </script>
+  </body>
+</html>
